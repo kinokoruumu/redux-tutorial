@@ -161,6 +161,23 @@ Reactはもう知ってるという人は `reduxの基盤を作る` までスキ
 - webpack
 
 ```
+$npm init
+```
+上のコマンドを実行すると`package.json`が生成されます。  
+その中の`scripts `の部分を以下のように書き足してください。
+
+```
+  "scripts": {
+    "prebuild": "rm -rf dist/",
+    "build": "webpack --color --progress",
+    "build:watch": "npm run build -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+その後、以下のコマンドで`package`を`install`してください。
+
+```
 $ npm install --save react react-dom redux react-redux babel-core babel-loader babel-preset-es2015 babel-preset-react webpack
 ```
 
